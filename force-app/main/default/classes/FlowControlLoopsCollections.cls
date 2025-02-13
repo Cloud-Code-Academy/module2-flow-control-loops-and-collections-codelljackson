@@ -20,7 +20,7 @@
 public with sharing class FlowControlLoopsCollections {
     
     /**
-     * Question 1
+     * Question 1 (completed)
      * Compares two numbers and return "Hello World!" if x is greater than the y.
      * If either of the numbers is null or x is less than y, return null.
      * Example: helloWorld(40, 10) should return "Hello World!"
@@ -29,11 +29,19 @@ public with sharing class FlowControlLoopsCollections {
      * @return "Hello World!" if x greater than y, otherwise return null.
      */
     public static String helloWorld(Integer x, Integer y) {
-        return null; // Replace null with the variable you used to store the result
+
+        if (x == null || y == null || x < y) {
+        return null;
+        }  
+        if (x > y) {
+        return 'Hello World!'; // Replace null with the variable you used to store the result
+        }
+        return null; 
     }
 
+    
     /**
-     * Question 2
+     * Question 2 (completed)
      * Checks if a person is eligible to vote based on their age.
      * A person is eligible to vote if they are 18 years old or older.
      * If the age is less than 18, the method will return false.
@@ -42,11 +50,15 @@ public with sharing class FlowControlLoopsCollections {
      * @return true if the person is eligible to vote, false otherwise.
      */
     public static Boolean votingEligibility(Integer age) {
-        return null; // Replace null with the variable you used to store the result
+
+        If (age < 18) {
+        return false;
+     }
+        return true; // Replace null with the variable you used to store the result
     }
 
     /**
-     * Question 3
+     * Question 3 (completed)
      * Finds the maximum of two numbers.
      * If both numbers are equal, it returns that number.
      * Example: findMax(58, 200) should return 200
@@ -56,14 +68,19 @@ public with sharing class FlowControlLoopsCollections {
      */
     public static Integer findMax(Integer num1, Integer num2) {
         // Initialize largestNum as null
+       
         Integer largestNum = null;
-
-        return null; // Replace null with the variable you used to store the result
+        
+        if (num1 == largestNum || num2 == largestNum) {
+        return largestNum; 
+    }
+        return Math.max(num1 , num2); // Replace null with the variable you used to store the result
+        
     }
 
-
+        
     /**
-     * Question 4
+     * Question 4 (completed)
      * Checks if a number is positive, negative, or zero.
      * If the number is null, return null.
      * Example: checkNumber(5) should return "Positive"
@@ -71,7 +88,19 @@ public with sharing class FlowControlLoopsCollections {
      * @return A string indicating whether the number is "Positive", "Negative", or "Zero", or null if the number is null.
      */
     public static String checkNumber(Integer a) {
+    
+        if (a == null) {
         return null; // Replace null with the variable you used to store the result
+
+    }   else if (a > 0) {
+        return 'Positive'; 
+
+    }   else if (a < 0) {
+        return 'Negative';
+
+    }   else {
+        return 'Zero';
+    }   
     }
 
     /**
