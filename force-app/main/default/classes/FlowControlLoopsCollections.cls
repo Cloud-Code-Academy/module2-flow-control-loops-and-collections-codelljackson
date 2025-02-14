@@ -112,8 +112,18 @@ public with sharing class FlowControlLoopsCollections {
      * @return A string indicating whether the number is "Even" or "Odd", or null if the number is null.
      */
     public static String checkEvenOdd(Integer a) {
-        return null; // Replace null with the variable you used to store the result
+
+        if (a == null) {
+        return null;
     }
+
+        else if  (Math.mod (a , 2) == 0) {
+        return 'Even';
+    }
+        else {
+        return 'Odd'; // Replace null with the variable you used to store the result
+    }
+}
 
     /**
      * Question 6
@@ -123,8 +133,19 @@ public with sharing class FlowControlLoopsCollections {
      * @return A string indicating whether the input is "Empty", "Null", or "Contains Text".
      */
     public static String checkString(String a) {
-        return null; // Replace null with the variable you used to store the result
+        
+        if (a == null) {
+            return 'Null';
     }
+
+        else if (a == ''){
+            return 'Empty'; 
+    }
+        else {
+        return 'Contains Text'; // Replace null with the variable you used to store the result
+    }
+}
+
 
     /**
      * Question 7
@@ -139,9 +160,32 @@ public with sharing class FlowControlLoopsCollections {
      * @return The grade for the given score.
      */
     public static String determineGrade(Integer score) {
-        return null; // Replace null with the variable you used to store the result
-    }
+        String A;
+        String B;
+        String C;
+        String D;
+        String F;
 
+        if (score >= 90) {
+        return 'A';
+
+    }
+        else if (score >= 80)  {
+        return 'B';
+
+    }
+        else if (score >= 70)  {
+        return 'C';
+
+    }
+        else if (score >= 60)  {
+        return 'D';
+
+    }
+        else {
+        return 'F'; // Replace null with the variable you used to store the result
+    }
+    }
 
     /**
      * Question 8
@@ -151,13 +195,14 @@ public with sharing class FlowControlLoopsCollections {
      * @return The sum of all integers up to the limit.
      */
     public static Integer sumUpToLimit(Integer intLimit) {
-        /* 
-         for (){
-            
-         }
-        */
+         
+        Integer sum = 0;
 
-        return null; // Replace null with the variable you used to store the result
+        for (Integer i = 1; i <= intlimit; i++) {
+            sum += i;
+
+    }
+        return sum; // Replace null with the variable you used to store the result
     }
 
     /**
@@ -170,13 +215,15 @@ public with sharing class FlowControlLoopsCollections {
         // Initialize the result String
 
         // Use a for loop to append 'Hello World!;' to the result string three times
-        /* 
-         for (){
-            
-         }
-        */
+        
+        String result = '';
 
-        return null; // Replace null with the variable you used to store the result
+         for (Integer i = 0; i < 3; i++) {
+            result += 'Hello World!; ' ; 
+         }
+        
+
+        return result; // Replace null with the variable you used to store the result
     }
 
     /**
