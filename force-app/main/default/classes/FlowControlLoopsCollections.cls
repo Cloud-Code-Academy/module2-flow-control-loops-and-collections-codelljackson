@@ -53,7 +53,7 @@ public with sharing class FlowControlLoopsCollections {
 
         If (age < 18) {
         return false;
-     }
+    }
         return true; // Replace null with the variable you used to store the result
     }
 
@@ -68,7 +68,7 @@ public with sharing class FlowControlLoopsCollections {
      */
     public static Integer findMax(Integer num1, Integer num2) {
         // Initialize largestNum as null
-       
+    
         Integer largestNum = null;
         
         if (num1 == largestNum || num2 == largestNum) {
@@ -195,11 +195,11 @@ public with sharing class FlowControlLoopsCollections {
      * @return The sum of all integers up to the limit.
      */
     public static Integer sumUpToLimit(Integer intLimit) {
-         
+    
         Integer sum = 0;
 
         for (Integer i = 1; i <= intlimit; i++) {
-            sum += i;
+        sum += i;
 
     }
         return sum; // Replace null with the variable you used to store the result
@@ -217,18 +217,15 @@ public with sharing class FlowControlLoopsCollections {
         // Use a for loop to append 'Hello World!;' to the result string three times
         
         String result = '';
-
-         for (Integer i = 0; i < 3; i++) {
-            result += 'Hello World!; ' ; 
-         }
-        
-
+        for (Integer i = 0; i < 3; i++) {
+        result += 'Hello World!; ' ; 
+    }
         return result; // Replace null with the variable you used to store the result
     }
 
     /**
      * Question 10
-     * Generate a string where the input string is repeated the given number of times, with each
+     * Generate a string where the input string is repeated a given number of times, with each
 	 * repetition separated by a semicolon. 
      * Do not add a semicolon after the last repetition.
 	 * Example: repeatString("Hello World!", 3) should return "Hello World!; Hello World!; Hello World!"
@@ -238,19 +235,22 @@ public with sharing class FlowControlLoopsCollections {
      */
     public static String repeatString(String inputString, Integer repeatCount) {
         // Initialize the result String
-
         // Use a for loop to append the inputString to the result string repeatCount times
-        /*
-        for () {
-
-            // If it is not the last iteration, add a semicolon to separate the strings
-        }
-        */
-
+        // If it is not the last iteration, add a semicolon to separate the strings
         // Return the final result string
-        return null; // Replace null with the variable you used to store the result
-    }
+        
+        String result = '';
 
+        for (Integer i = 0; i < repeatCount; i++) {
+        result += inputString;
+    
+        if (i < repeatCount - 1) {
+        result += '; '; // Replace null with the variable you used to store the result
+    }
+}
+        return result; 
+    }
+    
     /**
      * Question 11
      * Creates a List of integers and adds the integers 1, 2, and 3 to it.
@@ -258,15 +258,15 @@ public with sharing class FlowControlLoopsCollections {
      * @return A List of integers containing the numbers 1, 2, and 3.
      */
     public static List<Integer> createAndPopulateList() {
-        // Create a new list of integers
-
+    List<Integer> myList = new List<Integer>();// Create a new list of integers
+        
         // Add the integers 1, 2, and 3 to the list
-        // add 1
-        // add 2
-        // add 3
+        myList.add(1);
+        myList.add(2);
+        myList.add(3);
 
         // Return the populated list
-        return null; // Replace null with the variable you used to store the result
+        return myList; // Replace null with the variable you used to store the result
     }
 
     /**
@@ -278,11 +278,10 @@ public with sharing class FlowControlLoopsCollections {
     public static List<Integer> createAndRemoveFromList() {
         // Create a new list of integers and add numbers 1 to 5
         List<Integer> numberList = new List<Integer>{1, 2, 3, 4, 5}; //DO NOT CHANGE
-
-        // Remove the 3rd element (number 3) from the list
-        
+        numberList.remove(numberList.indexOf(3));    // Remove the 3rd element (number 3) from the list
+    
         // Return the updated list
-        return null; // Replace null with the variable you used to store the result
+        return numberList; // Replace null with the variable you used to store the result
     }
 
     /**
@@ -294,14 +293,12 @@ public with sharing class FlowControlLoopsCollections {
      */
     public static List<Integer> createIntegerList(Integer n) {
         // Create a new list of integers 
-
-        /*
-        for() {
-            //add integer to the list
-        }
-        */ 
-
-        return null; // Replace null with the variable you used to store the result
+        List<Integer> numberList = new List<Integer>();
+        
+        for(Integer i = 1; i <= n; i++) {
+        numberList.add(i);//add integer to the list
+    }
+        return numberList; // Replace null with the variable you used to store the result
     }
 
     /**
@@ -313,12 +310,12 @@ public with sharing class FlowControlLoopsCollections {
      * @return A Set of unique strings.
      */
     public static Set<String> createStringSet(List<String> inputList) {
-        // Create a new Set of strings
-        Set<String> stringSet = new Set<String>();
 
-        //add strings to the set
+        Set<String> stringSet = new Set<String>(inputList);// Create a new Set of strings
 
-        return null; // Replace null with the variable you used to store the result
+        List<String> deduplicatedlist = new List<String>(stringSet);//add strings to the set
+
+        return stringSet; // Replace null with the variable you used to store the result
     }
 
     /**
@@ -329,14 +326,17 @@ public with sharing class FlowControlLoopsCollections {
      */
     public static Integer sumPositiveIntegers() {
         List<Integer> numbers = new List<Integer>{-1, 2, -3, 4, -5, 6}; //DO NOT CHANGE
+        Integer sum = 0;
 
-        // Loop through the list of integers
-            // if the number is negative skip this iteration
-        
+        for (Integer num : numbers){
 
-        return null; // Replace null with the variable you used to store the result
+        if (num < 0) {// Loop through the list of integers
+        continue;// if the number is negative skip this iteration
     }
-
+        sum += num; 
+    }
+        return sum;// Replace null with the variable you used to store the result
+    }
     /**
      * Question 16
      * Iterates over a list of strings and searches for a specific word. Once found, it breaks the loop.
@@ -349,7 +349,7 @@ public with sharing class FlowControlLoopsCollections {
         // The variable to store the index of the word
 
         // Loop through the list of words
-            // If the current word is the word to find, exit the loop
+        // If the current word is the word to find, exit the loop
 
         return null; // Replace null with the variable you used to store the result
     }
