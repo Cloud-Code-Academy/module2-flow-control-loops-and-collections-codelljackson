@@ -14,7 +14,7 @@
 * in flow control, loops, and collections. By mastering these concepts, developers will be able to write more
 * efficient and effective code in their Salesforce projects.
 *
-* @author Your Name
+* @author Codell L. Jackson
 */
 
 public with sharing class FlowControlLoopsCollections {
@@ -326,9 +326,11 @@ public with sharing class FlowControlLoopsCollections {
      */
     public static Integer sumPositiveIntegers() {
         List<Integer> numbers = new List<Integer>{-1, 2, -3, 4, -5, 6}; //DO NOT CHANGE
+        
         Integer sum = 0;
 
         for (Integer num : numbers){
+        
 
         if (num < 0) {// Loop through the list of integers
         continue;// if the number is negative skip this iteration
@@ -345,15 +347,17 @@ public with sharing class FlowControlLoopsCollections {
      * @param words The list of words to search.
      * @return The position of the word in the list as a string or -1 if the word was not found.
      */
-    public static Integer findWordInList(String wordToFind, List<String> words) {
-        // The variable to store the index of the word
+    public static Integer findWordInList(String wordToFind, List<String> words) {// The variable to store the index of the word
 
-        // Loop through the list of words
-        // If the current word is the word to find, exit the loop
+        for (Integer i = 0; i < words.size(); i++) { // Loop through the list of words
 
-        return null; // Replace null with the variable you used to store the result
+        if (words[i].trim().equalsIgnoreCase(wordToFind.trim())) { // If the current word is the word to find, exit the loop
+        return i; // Replace null with the variable you used to store the result
     }
-
+}
+        return -1; // Replace null with the variable you used to store the result
+    
+}
     /**
      * Question 17
      * Loop through the list of money and adds them up until it accumulates more than 40 and then stops counting.
@@ -364,8 +368,17 @@ public with sharing class FlowControlLoopsCollections {
     public static Decimal countMoney() {
         // The list of money in the wallet, represented in dollars and cents
         List<Decimal> moneyInWallet = new List<Decimal>{0.50, 10, 3.84, 24.60, 9.08, 50, 4.90}; //DO NOT CHANGE
+        
+        Decimal total = 0;
 
-        return null; // Replace null with the variable you used to store the result
+        for (Decimal money : moneyInWallet) {
+            total += money; 
+
+            If (total > 40) {
+                break; 
+            }
+        }
+        return total; // Replace null with the variable you used to store the result
     }
 
     /**
@@ -375,16 +388,17 @@ public with sharing class FlowControlLoopsCollections {
      * @return The Map of fruits and their quantities.
      */
     public static Map<String, Integer> addItemsToMap() {
-        // Initialize an empty Map
+        
+        Map<String, Integer> fruitMap = new Map<String, Integer>();// Initialize an empty Map
 
         // Add key-value pairs to the Map
-        // add Apples => 5
-        // add Oranges => 10
-        // add Bananas => 15
-        // add Pears => 20
-        // add Grapes => 25
-
-        return null; // Replace null with the variable you used to store the result
+        fruitMap.put('Apples', 5);
+        fruitMap.put('Oranges', 10);
+        fruitMap.put('Bananas', 15);
+        fruitMap.put('Pears', 20);
+        fruitMap.put('Grapes', 25);
+        
+        return fruitMap; // Replace null with the variable you used to store the result
     }
 
     /**
@@ -397,18 +411,19 @@ public with sharing class FlowControlLoopsCollections {
      * @return The salary of the employee, or null if the employee is not found in the Map.
      */
     public static Integer getSalary(String employeeName) {
-        // Initialize a Map
+
+        Map<String, Integer> employeeSalaries = new Map<String, Integer>();// Initialize a Map
 
         // Add key-value pairs to the Map
-        // add John Doe => 50000
-        // add Jane Smith => 60000
-        // add Sam Brown => 55000
-        // add Alice Johnson => 65000
+        employeeSalaries.put('John Doe', 50000);
+        employeeSalaries.put('Jane Smith', 60000);
+        employeeSalaries.put('Sam Brown', 55000);
+        employeeSalaries.put('Alice Johnson', 65000);
 
-        // Get the salary of the employee
+        employeeSalaries.get(employeeName);// Get the salary of the employee
 
-        // Return the salary of the employee, or null if the employee is not found in the Map
-        return null; // Replace null with the variable you used to store the result
+        return employeeSalaries.get(employeeName); // Return the salary of the employee, or null if the employee is not found in the Map
+         // Replace null with the variable you used to store the result
     }
 
     /**
@@ -425,20 +440,22 @@ public with sharing class FlowControlLoopsCollections {
         // Initialize a Map
         Map<String, Integer> employeeSalaries = new Map<String, Integer>();
 
+        List<String> highPaidEmployees = new List<String>();// Initialize a list to store the names of high paid employees
+
         // Add key-value pairs to the Map
-        // add John Doe => 50000
-        // add Jane Smith => 60000
-        // add Sam Brown => 55000
-        // add Alice Johnson => 65000
+        employeeSalaries.put('John Doe', 50000);
+        employeeSalaries.put('Jane Smith', 60000);
+        employeeSalaries.put('Sam Brown', 55000);
+        employeeSalaries.put('Alice Johnson', 65000);
 
-        // Initialize a list to store the names of high paid employees
+        for (String employeeName : employeeSalaries.keySet()) {// Iterate over the Map using a for loop
+        Integer salary = employeeSalaries.get(employeeName);
 
-        // Iterate over the Map using a for loop
-            // Check if the salary of the employee is more than 55000
-                // Add the employee to the list of high paid employees
-
-        // Return the list of high paid employees
-        return null; // Replace null with the variable you used to store the result
+        if (salary > 55000) {// Check if the salary of the employee is more than 55000
+        highPaidEmployees.add(employeeName);// Add the employee to the list of high paid employees
+        }
     }
-
+        // Return the list of high paid employees
+        return highPaidEmployees; // Replace null with the variable you used to store the result
+    }
 }
