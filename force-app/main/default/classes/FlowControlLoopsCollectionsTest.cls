@@ -6,7 +6,7 @@
 */
 
 @IsTest
-public with sharing class FlowControlLoopsCollectionsTest {
+public class FlowControlLoopsCollectionsTest {
     @IsTest
     static void testHelloWorld() {
         String result = FlowControlLoopsCollections.helloWorld(10, 5);
